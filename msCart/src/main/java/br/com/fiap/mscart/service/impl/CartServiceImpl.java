@@ -25,8 +25,8 @@ public class CartServiceImpl implements CartService {
 	private static final String CART_NOT_FOUND = "O usuário logado não possui carrinho de compras aberto"; //User does not have an open shopping cart
 	private static final String PRODUCT_NOT_FOUND = "Produto %s não encontrado";
 	private static final String PRODUCT_DOESNT_HAVE_ENOUGH_STOCK = "Estoque insuficiente para o produto %s"; //Insufficient stock
-	private static final String ITEM_NOT_FOUND = "Produto %s não encontrado";
-	private static final String ITEM_DOESNT_HAVE_ENOUGH_QUANTITY = "Carrinho de compras tem não tem quantidade suficiente do produto %s  "; //Shopping cart does not have enough quantity of item %s
+	private static final String ITEM_NOT_FOUND = "Item %s não encontrado no carrinho";
+	private static final String ITEM_DOESNT_HAVE_ENOUGH_QUANTITY = "Carrinho de compras não tem quantidade suficiente do produto %s  "; //Shopping cart does not have enough quantity of item %s
 
 	private final CartRepository cartRepository;
 	private final ProductFunctions productFunctions;
