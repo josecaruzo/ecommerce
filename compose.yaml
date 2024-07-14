@@ -1,0 +1,54 @@
+services:
+  dbpostgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ecommerce
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    networks:
+      - ecommerce_network
+
+  msuser:
+    build:
+      context: ./msUser
+    depends_on:
+      - dbpostgres
+    ports:
+      - "8081:8081"
+    networks:
+      - ecommerce_network
+
+  msproduct:
+    build:
+      context: ./msProduct
+    depends_on:
+      - dbpostgres
+    ports:
+      - "8082:8082"
+    networks:
+      - ecommerce_network
+
+  mscart:
+    build:
+      context: ./msCart
+    depends_on:
+      - dbpostgres
+    ports:
+      - "8083:8083"
+    networks:
+      - ecommerce_network
+
+  mspayment:
+    build:
+      context: ./msPayment
+    depends_on:
+      - dbpostgres
+    ports:
+      - "8084:8084"
+    networks:
+      - ecommerce_network
+
+networks:
+  ecommerce_network:
